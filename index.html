@@ -1,229 +1,233 @@
 > Optimus prime:
-        <div class="footer">
-            <p>🧞 Your wish, granted.</p>
-            <p>GenieAssistant.ai</p>
-        </div>
-    </div>
-    
-    <!-- Simple form for email collection -->
-    <script>
-        // This would connect to a Google Form or similar
-        console.log('Landing page loaded');
-    </script>
-</body>
-</html>
+Below is a revamped landing‑page template that takes the visual ideas from Heyron (ai) – clean hero, bold pricing card, clear “How it works” steps, icon + text feature blocks, a quick FAQ, and a footer with social links.
+The markup is still pure HTML + CSS (no external libraries) so you can paste it straight into index.html (or index‑v2.html) and push to GitHub.
 
 ───
 
-index-v2.html (the more visually‑rich version)
+Updated index.html
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenieAssistant.ai — Your AI Assistant, Hatched in 5 Minutes</title>
+<meta charset="UTF-8">
+<title>GenieAssistant.ai – Your AI Assistant, Hatched in 5 Minutes</title>
+<meta name="description"
+      content="GenieAssistant – a private AI assistant that works for you. No code, no setup. Join the wait‑list and get early access.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    /* ==== Global reset ==== */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        line-height:1.6;background:#0a0a18;
+        color:#f1f1f1;overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{border:none;cursor:pointer}
+    /* ==== Layout helpers ==== */
+    .container{max-width:1200px;margin:auto;padding:2rem 1rem}
+    .center{text-align:center}
+    .flex{display:flex;gap:2rem;flex-wrap:wrap;align-items:center}
+    .gap{gap:1rem}
+    .mt{margin-top:2rem}
+    .mb{margin-bottom:2rem}
+    /* ==== Typography ==== */
+    h1{font-size:3rem;color:#fff;font-weight:800}
+    h2{font-size:2rem;color:#fff;font-weight:600}
+    h3{font-size:1.5rem;color:#fff;font-weight:600}
+    p{color:#d0d0d0}
+    .small{font-size:.9rem;color:#aaa}
+    /* ==== Colors ==== */
+    :root{
+        --brand:#ff6b6b;
+        --brand-dark:#e94560;
+        --gradient:#0a0a18, #16213e, #1a1a2e;
+    }
+    /* ==== Hero ==== */
+    .hero{
+        background:linear-gradient(135deg,var(--gradient));
+        padding:4rem 1rem 5rem;
+        text-align:center;
+        position:relative;
+    }
+    .hero::after{
+        content:"";position:absolute;bottom:0;left:0;width:100%;height:120px;
+        background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230a0a18" fill-opacity="1" d="M0,64L40,85.3C80,107,160,149,240,170.7C320,192,400,192,480,176C560,160,640,128,720,133.3C800,139,880,181,960,197.3C1040,213,1120,203,1200,176C1280,149,1360,107,1400,85.3L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>') repeat-x bottom;
+        background-size:cover;
+    }
+    .logo{font-size:1.2rem;font-weight:600;margin-bottom:.5rem}
+    .emoji{font-size:5rem;margin:1rem 0}
+    .tagline{font-size:1.3rem;opacity:.9}
+    .cta{
+        background:#fff;color:var(--brand-dark);
+        padding:.9rem 2rem;
+        border-radius:30px;
+        font-size:1.1rem;font-weight:600;
+        display:inline-block;margin-top:1.5rem;
+        transition:transform .2s,box-shadow .2s;
+    }
+    .cta:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+    /* ==== Pricing card ==== */
+    .pricing{
+        background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+        border-radius:20px;padding:2.5rem 2rem;
+        text-align:center;color:#fff;max-width:530px;margin:auto;
+        box-shadow:0 12px 30px rgba(0,0,0,.4);
+    }
+    .price{font-size:3rem;font-weight:800;margin:1rem 0}
+    .price sup{font-size:.5em;vertical-align:super}
+    .price sub{font-size:.5em;vertical-align:sub}
+    .badge{background:#fff;color:var(--brand-dark);display:inline-block;
+        padding:.2rem .8rem;border-radius:12px;font-size:.9rem;margin-bottom:1rem}
+    /* ==== Feature blocks ==== */
+    .feature-grid{
 
 > Optimus prime:
-<meta name="description" content="Pre-launch: Get your personal AI assistant. $10 reserves your spot. Early access limited to first 200.">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height:1.6;
-            color:#333;
-            background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
-            min-height:100vh;
-        }
-        .container { max-width:800px; margin:0 auto; padding:40px 20px; }
-        .hero { text-align:center; color:white; margin-bottom:60px; }
-        .logo { font-size:24px; font-weight:bold; margin-bottom:20px; display:inline-block; }
-        .genie-emoji { font-size:80px; display:block; margin-bottom:20px; }
-        h1 { font-size:48px; font-weight:800; margin-bottom:20px; line-height:1.2; }
-        .tagline { font-size:24px; opacity:0.9; margin-bottom:30px; }
-        .offer {
-            background:linear-gradient(135deg,#e94560,#ff6b6b);
-            padding:30px;
-            border-radius:20px;
-            margin-bottom:40px;
-            text-align:center;
-            box-shadow:0 20px 60px rgba(233,69,96,0.4);
-        }
-        .offer h2 { font-size:28px; margin-bottom:10px; }
-        .offer-price { font-size:64px; font-weight:800; margin:20px 0; }
-        .offer-price span { font-size:24px; opacity:0.8; }
-        .spots-left {
-            background:rgba(255,255,255,0.2);
-            padding:10px 20px;
-            border-radius:30px;
-            display:inline-block;
-            margin-bottom:20px;
-            font-weight:600;
-        }
-        .cta-button {
-            background:white;
-            color:#e94560;
-            border:none;
-            padding:20px 60px;
-            font-size:20px;
-            font-weight:bold;
-            border-radius:50px;
-            cursor:pointer;
-            transition:transform .2s,box-shadow .2s;
-            display:inline-block;
-            text-decoration:none;
-            margin-top:20px;
-        }
-        .cta-button:hover { transform:scale(1.05); box-shadow:0 10px 30px rgba(0,0,0,0.3); }
-        .features {
-            background:rgba(255,255,255,0.1);
-            border-radius:20px;
-            padding:40px;
-            margin-bottom:40px;
-        }
-        .features h3 { color:white; font-size:24px; margin-bottom:30px; text-align:center; }
-        .feature-list {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:20px;
-        }
-        .feature-item {
-            color:white;
-            padding:20px;
-            background:rgba(255,255,255,0.1);
-            border-radius:15px;
-            text-align:center;
-        }
-        .feature-icon { font-size:32px; display:block; margin-bottom:10px; }
-        .how-it-works { color:white; text-align:center; margin-bottom:40px; }
-        .how-it-works h3 { font-size:28px; margin-bottom:30px; }
-        .steps {
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:30px;
-        }
-        .step {
-            flex:1;
-            min-width:150px;
-            max-width:200px;
-        }
-        .step-number {
-            width:50px; height:50px;
-            background:#e94560;
-            border-radius:50%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:24px;
-            font-weight:bold;
-            margin:0 auto 15px;
-        }
-        .step p { opacity:0.8; font-size:14px; }
-        .faq {
-            background:rgba(255,255,255,0.05);
-            border-radius:20px;
-            padding:40px;
-            margin-bottom:40px;
-        }
-        .faq h3 { color:white; font-size:24px; margin-bottom:20px; text-align:center; }
-        .faq-item { margin-bottom:20px; }
+        display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+        gap:1.5rem;margin-top:2rem;
+    }
+    .feature{
+        background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;
 
 > Optimus prime:
-        .faq-question { color:#e94560; font-weight:600; margin-bottom:8px; }
-
-> Optimus prime:
-.faq-answer { color:rgba(255,255,255,0.7); font-size:14px; }
-        .footer { text-align:center; color:rgba(255,255,255,0.5); font-size:14px; padding:40px 0; }
-        .sparkle {
-            position:absolute;
-            font-size:20px;
-            animation:sparkle 2s ease-in-out infinite;
-        }
-        @keyframes sparkle {
-            0%,100% { opacity:0; transform:scale(0.5); }
-            50% { opacity:1; transform:scale(1); }
-        }
-        @media (max-width:600px) {
-            h1 { font-size:32px; }
-            .tagline { font-size:18px; }
-            .offer-price { font-size:48px; }
-            .cta-button { padding:15px 40px; font-size:18px; }
-        }
-    </style>
+text-align:center;transition:background .2s;
+    }
+    .feature:hover{background:rgba(255,255,255,.12)}
+    .feature .icon{font-size:2rem;margin-bottom:.5rem}
+    /* ==== How‑it‑works ==== */
+    .steps{
+        display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;
+        margin-top:2rem;
+    }
+    .step{
+        flex:1;min-width:200px;max-width:260px;
+        text-align:center;background:rgba(255,255,255,.05);
+        border-radius:12px;padding:1.5rem;
+    }
+    .step .num{
+        width:50px;height:50px;background:#fff;color:var(--brand-dark);
+        border-radius:50%;display:flex;align-items:center;justify-content:center;
+        font-weight:600;margin:auto;margin-bottom:.8rem;
+    }
+    /* ==== FAQ ==== */
+    .faq{background:rgba(255,255,255,.04);border-radius:12px;padding:2rem}
+    .faq-item{margin-bottom:1.5rem}
+    .question{color:var(--brand-dark);font-weight:600;margin-bottom:.4rem}
+    .answer{font-size:.95rem}
+    /* ==== Footer ==== */
+    .footer{font-size:.85rem;color:#777;text-align:center;padding:2rem 0}
+    .social a{margin:0 .5rem;color:#aaa}
+    .social a:hover{color:#fff}
+    /* ==== Responsive tweaks ==== */
+    @media(max-width:768px){
+        h1{font-size:2.2rem}
+        .price{font-size:2.4rem}
+        .cta{font-size:1rem}
+    }
+</style>
 </head>
 <body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
     <div class="container">
-        <div class="hero">
-            <div class="logo">🧞 GenieAssistant.ai</div>
-            <span class="genie-emoji">🧞</span>
-            <h1>Your AI Assistant,<br>Hatched in 5 Minutes</h1>
-            <p class="tagline">No technical setup. No confusing dashboards. Just help.</p>
-            <p style="font-size:18px;margin-top:20px;opacity:0.8;">🚀 Join the waitlist — first 200 get early access</p>
-        </div>
+        <div class="logo">🧞 GenieAssistant.ai</div>
+        <div class="emoji">🧞</div>
+        <h1>Your AI Assistant,<br>Hatched in 5 Minutes</h1>
+        <p class="tagline">No code, no setup – just a voice‑first helper that works for you.</p>
+        <a href="https://forms.google.com/YOUR_GOOGLE_FORM_LINK" class="cta">Join the Wait‑list – Free</a>
+    </div>
+</section>
 
-        <div class="offer">
-            <div class="spots-left">🔥 First 200 spots available</div>
-            <h2>Join the Waitlist</h2>
-            <div class="offer-price">FREE<span></span></div>
-            <p style="margin-bottom:20px;opacity:0.9;">Be first in line for early access</p>
-            <a href="https://forms.google.com/YOUR_GOOGLE_FORM_LINK" class="cta-button">Join Waitlist — Free</a>
-            <p style="margin-top:20px;font-size:12px;opacity:0.7;">No payment now. We'll notify you when early access opens.</p>
-        </div>
+<!-- ===== PRICING CARD (now free to join) ===== -->
+<section class="center mt mb">
+    <div class="pricing">
+        <div class="badge">🟢 Early‑access – FREE</div>
+        <h2>Reserve Your Spot</h2>
+        <div class="price">$0<span class="small">/month</span></div>
+        <p class="small">No payment required now. We’ll notify you when early access opens.</p>
+        <a href="https://forms.google.com/YOUR_GOOGLE_FORM_LINK" class="cta">Join Wait‑list</a>
+    </div>
+</section>
 
-        <div class="features">
-            <h3>What Your Genie Can Do</h3>
-            <div class="feature-list">
-                <div class="feature-item"><span class="feature-icon">📅</span><strong>Calendar Manager</strong><p>Books appointments, sends reminders</p></div>
-                <div class="feature-item"><span class="feature-icon">📧</span><strong>Email Handler</strong><p>Drafts responses, follows up</p></div>
-                <div class="feature-item"><span class="feature-icon">💊</span><strong>Health Reminders</strong><p>Medications, follow-ups, refills</p></div>
-                <div class="feature-item"><span class="feature-icon">🔍</span><strong>Research Assistant</strong><p>Finds info, summarizes articles</p></div>
-                <div class="feature-item"><span class="feature-icon">💬</span><strong>Texts You</strong><p>On WhatsApp, Telegram — no app needed</p></div>
-                <div class="feature-item"><span class="feature-icon">🧠</span><strong>Remembers Everything</strong><p>Your preferences, family, schedule</p></div>
-            </div>
-        </div>
+<!-- ===== FEATURES ===== -->
+<section class="container mt mb">
+    <h2 class="center">What Your Genie Can Do</h2>
+    <div class="feature-grid">
+        <div class="feature"><div class="icon">📅</div><strong>Calendar Manager</strong><p>Books appointments and sends reminders.</p></div>
+        <div class="feature"><div class="icon">📧</div><strong>Email Handler</strong><p>Drafts replies, follows up, keeps your inbox tidy.</p></div>
+        <div class="feature"><div class="icon">💊</div><strong>Health Reminders</strong><p>Medication alerts, check‑ups, refill notices.</p></div>
+        <div class="feature"><div class="icon">🔍</div><strong>Research Assistant</strong><p>Finds info, summarizes articles, saves results.</p></div>
+        <div class="feature"><div class="icon">💬</div><strong>Talk Anywhere</strong><p>WhatsApp, Telegram, SMS – no app needed.</p></div>
+        <div class="feature"><div class="icon">🧠</div><strong>Memory</strong><p>Remembers preferences, family, and past conversations.</p></div>
+    </div>
+</section>
 
-        <div class="how-it-works">
-            <h3>How It Works</h3>
-            <div class="steps">
-                <div class="step"><div class="step-number">1</div><p>Sign up — 30 seconds</p></div>
-                <div class="step"><div class="step-number">2</div><p>Pick your avatar &amp; voice</p></div>
-                <div class="step"><div class="step-number">3</div><p>We set it all up for you</p></div>
-
-> Optimus prime:
-                <div class="step"><div class="step-number">4</div><p>Text your assistant on WhatsApp</p></div>
-            </div>
-        </div>
-
-        <div class="faq">
-            <h3>Frequently Asked Questions</h3>
-            <div class="faq-item"><div class="faq-question">When do I get access?</div><div class="faq-answer">You'll get an invite within 4‑6 weeks. We'll send updates every week showing progress.</div></div>
-            <div class="faq-item"><div class="faq-question">What if I change my mind?</div><div class="faq-answer">100% refundable, no questions asked. Your $10 goes toward your first month if you stay.</div></div>
+<!-- ===== HOW IT WORKS ===== -->
+<section class="container mt mb">
+    <h2 class="center">How It Works</h2>
 
 > Optimus prime:
-<div class="faq-item"><div class="faq-question">What does it cost?</div><div class="faq-answer">Free to join the waitlist. When we launch: $19/month flat — unlimited messages, all features included.</div></div>
-            <div class="faq-item"><div class="faq-question">Is there any commitment?</div><div class="faq-answer">No. Join the waitlist, get early access. No payment until you're ready.</div></div>
-            <div class="faq-item"><div class="faq-question">Do I need to be technical?</div><div class="faq-answer">No. We set everything up for you. You just text.</div></div>
+    <div class="steps">
+        <div class="step">
+            <div class="num">1</div>
+            <p>Sign up – takes under a minute.</p>
         </div>
-
-        <div class="footer">
-            <p>🧞 Your wish, granted.</p>
-            <p>GenieAssistant.ai</p>
+        <div class="step">
+            <div class="num">2</div>
+            <p>Pick an avatar &amp; a voice you love.</p>
+        </div>
+        <div class="step">
+            <div class="num">3</div>
+            <p>We set up a private AI server for you.</p>
+        </div>
+        <div class="step">
+            <div class="num">4</div>
+            <p>Start chatting – no code, no login hassle.</p>
         </div>
     </div>
+</section>
 
-    <script>
-        console.log('Landing page loaded');
-    </script>
+> Optimus prime:
+<!-- ===== FAQ ===== -->
+<section class="container mt mb">
+    <h2 class="center">Frequently Asked Questions</h2>
+    <div class="faq">
+        <div class="faq-item">
+            <div class="question">When will I get access?</div>
+            <div class="answer">You’ll receive an invitation within 4‑6 weeks. We’ll keep you updated via email.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">What if I change my mind?</div>
+            <div class="answer">100 % refundable. Your $10 deposit (if you decide to pay later) is applied to the first month.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">How much will it cost?</div>
+            <div class="answer">Free to join the wait‑list. When we launch it will be $19 / month – unlimited messages, all features included.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Do I need technical skills?</div>
+            <div class="answer">No. We handle everything – you just talk to your Genie.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Is my data private?</div>
+            <div class="answer">Yes. Your instance is isolated; nobody else can see your conversations or files.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <p>🧞 GenieAssistant.ai – Your wish, granted.</p>
+    <div class="social">
+        <a href="https://twitter.com/GenieAssist" target="_blank">🐦 Twitter</a> |
+        <a href="https://discord.gg/GenieAssist" target="_blank">💬 Discord</a> |
+        <a href="mailto:hello@genieassistant.ai">✉️ Email</a>
+    </div>
+    <p class="small">© 2026 GenieAssistant.ai – All rights reserved.</p>
+</footer>
+
 </body>
 </html>
 
-───
-
-How to use
-
-1. Create (or open) the file in your GitHub repo (index.html or index-v2.html).
-2. Paste the entire block (including the <!DOCTYPE html> line) into the file, overwriting any older version.
-3. Commit & push the change.
-
-If you need a quick command to do it from the terminal, just let me know and I can run the git add/commit/push steps for you (once you give me the remote URL).
